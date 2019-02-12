@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
+// КОМАНДА ДЛЯ КОМПИЛЯЦИИ: gcc -o main main.c -lm - для поддержки math.h
+// после сборки запуститьт объектный код: ./main
+
 int calculateSquareEquality (int a, int b, int c, float* x1, float* x2) {
     float disc = (float)b * (float)b - 4 * (float)a * (float)c;
 
