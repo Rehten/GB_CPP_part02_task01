@@ -7,12 +7,16 @@
 int calculateSquareEquality (int a, int b, int c, float* x1, float* x2) {
     float disc = (float)b * (float)b - 4 * (float)a * (float)c;
 
+    // случай с D = 0 рассматривается так же, как и D > 0 - просто значения корней равны - решение принято для сокращения кода.
     if (disc >= 0) {
         *x1 = ((-1) * b + sqrt(disc))/2 * a;
         *x2 = ((-1) * b - sqrt(disc))/2 * a;
+        return 1;
+    } else {
+        return -1;
     }
 
-    return 1;
+
 }
 
 int main() {
@@ -33,9 +37,6 @@ int main() {
     switch (resultCode) {
         case 1:
             printf("У уравнения 2 корня: х1 = %7.2f и x2 = %7.2f\n", x1, x2);
-            break;
-        case 0:
-            printf("У уравнения 1 корень: х = %7.2f\n", x1);
             break;
         case -1:
             printf("Уравнение не имеет корней\n");
